@@ -1,0 +1,23 @@
+<h2>Nieuwe locatie</h2>
+<form (ngSubmit)="onSubmit()" #locationForm="ngForm">
+  <p>
+      <label for="name">Naam</label><br />
+      <input id="name" name="name" required [(ngModel)]="location.name"  />
+  </p>
+  <p>
+      <label for="place">Plaats</label><br />
+      <input id="place" name="place" required [(ngModel)]="location.place" />
+  </p>
+  <p>
+    <label for="adress">Adres</label><br />
+    <input id="adress" name="adress" required [(ngModel)]="location.adress" />
+</p>
+  <p>
+      <button type="submit" [disabled]="!locationForm.form.valid || submitted">
+        Submit
+      </button>
+  </p>
+</form>
+<p>
+    {{ postResponse | json }}
+</p>

@@ -1,0 +1,9 @@
+<h2>overzicht reservaties?</h2>
+
+<ul>
+    <span *ngFor="let reservation of reservations">
+        <li >
+            {{ reservation.reservationID + ' ' + reservation.roomID +  ', ' + reservation.customerID }}
+        </li>
+    </span>
+</ul>

@@ -1,0 +1,9 @@
+<h2>overzicht kamers?</h2>
+
+<ul>
+    <span *ngFor="let room of rooms">
+        <li >
+            {{ room.roomID + ' ' + room.description +  ', ' + room.locationID }}
+        </li>
+    </span>
+</ul>

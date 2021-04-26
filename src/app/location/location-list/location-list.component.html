@@ -1,0 +1,9 @@
+<h2>overzicht locaties?</h2>
+
+<ul>
+    <span *ngFor="let location of locations">
+        <li >
+            {{ location.locationID + ' ' + location.name +  ', ' + location.adress }}
+        </li>
+    </span>
+</ul>
