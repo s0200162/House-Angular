@@ -3,7 +3,7 @@
 <ul>
     <span *ngFor="let reservation of reservations">
         <li >
-            {{ reservation.reservationID + ' ' + reservation.roomID +  ', ' + reservation.customerID }}
+            {{ reservation.reservationID + ' ' + reservation.room.description +  ', ' + reservation.customer.fullname }}
         </li>
     </span>
 </ul>

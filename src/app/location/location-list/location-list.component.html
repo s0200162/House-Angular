@@ -1,9 +1,37 @@
-<h2>overzicht locaties?</h2>
+<h2>Overzicht Locaties</h2>
 
-<ul>
-    <span *ngFor="let location of locations">
-        <li >
-            {{ location.locationID + ' ' + location.name +  ', ' + location.adress }}
-        </li>
-    </span>
-</ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Plaats
+            </th>
+            <th>
+                Adres
+            </th>
+            <th>
+                Acties
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let location of locations">
+            <td>
+                {{ location.name }}
+            </td>
+            <td>
+                {{ location.place }}
+            </td>
+            <td>
+                {{ location.adress }}
+            </td>
+            <td>
+                <a href="location/details/{{ location.locationID }}">Details</a>
+                Links Edit, Details, Delete
+            </td>
+        </tr>
+    </tbody>
+</table>

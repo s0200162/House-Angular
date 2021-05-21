@@ -1,15 +1,12 @@
-<h1>App component</h1>
-<nav>
-    <ul>
-        <li>
-            <a routerLink="/" routerLinkActive="active">Home</a>
-        </li>
-        <li>
-            <a routerLink="/locations" routerLinkActive="active">Locations</a>
-        </li><li>
-            <a routerLink="/location/create" routerLinkActive="active">Nieuwe Locatie</a>
-        </li>
+<app-header></app-header>
 
-    </ul>
-</nav>
-<router-outlet></router-outlet>
+<div class="container">
+  <main role="main" class="pb-3">
+      <router-outlet></router-outlet>
+  </main>
+</div>
+
+<app-footer></app-footer>
+
+
+

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -11,7 +11,7 @@ import { ApiUser } from '../_models/api-user';
 })
 export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<ApiUser>;
-    public currentUser: Observable<ApiUser>;
+  public currentUser: Observable<ApiUser>;
 
   constructor(private http: HttpClient) { 
     this.currentUserSubject = new BehaviorSubject<ApiUser>(JSON.parse(localStorage.getItem('currentUser')));

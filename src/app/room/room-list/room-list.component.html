@@ -3,7 +3,7 @@
 <ul>
     <span *ngFor="let room of rooms">
         <li >
-            {{ room.roomID + ' ' + room.description +  ', ' + room.locationID }}
+            {{ room.roomID + ' ' + room.description +  ', ' + room.location.name }}
         </li>
     </span>
 </ul>

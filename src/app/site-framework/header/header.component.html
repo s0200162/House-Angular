@@ -1,0 +1,27 @@
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <a href="/" class="navbar-brand">
+            <!-- Logo Image -->
+            <img src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+            <!-- Logo Text -->
+            <span class="text-uppercase font-weight-bold">MedHouse</span>
+        </a>
+        <div class="container">
+            <a routerLink="/" routerLinkActive="active">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a routerLink="/locations" routerLinkActive="active">Locations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/location/create" routerLinkActive="active">Create Location</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

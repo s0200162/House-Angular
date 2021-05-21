@@ -1,6 +1,6 @@
 import {HttpClient} from '@angular/common/http'
 import { Injectable } from '@angular/core';
-import { from, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Location } from  '../_models/location'
 import { map } from 'rxjs/operators';
@@ -22,7 +22,21 @@ export class LocationService {
     );
   }
 
-  addLocation(location: Location): Observable<any> {
-    return this._http.post(environment.apiUrl + 'location', location);
+  getLocationById(locationID): Observable<Location> {
+    return this._http.get<Location>(environment.apiUrl + 'location/' + locationID
+    );
   }
+
+  addLocation(location: Location): Observable<Location> {
+    return this._http.post<Location>(environment.apiUrl + 'location', location);
+  }
+
+  updateLocation(locationId, location: Location): Observable<Location>{
+    return this._http.put<Location>(environment.apiUrl + 'location' + locationId, location)
+  }
+
+  deleteLocation(locationId): Observable<Location> {
+    return this._http.delete<Location>(environment.apiUrl + 'location' + locationId)
+  }
+
 }
