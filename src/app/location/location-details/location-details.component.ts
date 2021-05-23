@@ -13,11 +13,11 @@ export class LocationDetailsComponent implements OnInit {
 
   constructor(
     private _locationService: LocationService,
-    private activatedRoute: ActivatedRoute
+    private _activatedRoute: ActivatedRoute
    ) {  }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(data => {
+    this._activatedRoute.params.subscribe(data => {
       this.locationID = data.id;
       console.log(data)
     });

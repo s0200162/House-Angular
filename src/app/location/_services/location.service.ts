@@ -32,11 +32,11 @@ export class LocationService {
   }
 
   updateLocation(locationId, location: Location): Observable<Location>{
-    return this._http.put<Location>(environment.apiUrl + 'location' + locationId, location)
+    return this._http.put<Location>(environment.apiUrl + 'location/' + locationId, location)
   }
 
   deleteLocation(locationId): Observable<Location> {
-    return this._http.delete<Location>(environment.apiUrl + 'location' + locationId)
+    return this._http.delete<Location>(environment.apiUrl + 'location/' + locationId)
   }
 
 }

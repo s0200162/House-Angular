@@ -12,6 +12,8 @@ import { ReservationListComponent } from './reservation/reservation-list/reserva
 import { LoginComponent} from './login/login.component'
 import { AuthGuard} from './_helpers/auth-guard'
 import { RoomCreateComponent } from './room/room-create/room-create.component';
+import { RoomDetailsComponent } from './room/room-details/room-details.component';
+import { RoomUpdateComponent } from './room/room-update/room-update.component';
 
 
 const routes: Routes = [
@@ -19,11 +21,13 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'locations', component: LocationListComponent, canActivate: [AuthGuard]},
   { path: 'location/create', component: LocationCreateComponent},
-  { path: 'location/update/:locationID', component: LocationUpdateComponent},
+  { path: 'location/update/:id', component: LocationUpdateComponent},
   { path: 'location/details/:id', component: LocationDetailsComponent},
-  { path: 'location/delete/:locationID', component: LocationDeleteComponent},
+  { path: 'location/delete/:id', component: LocationDeleteComponent},
   { path: 'rooms', component: RoomListComponent},
   { path: 'room/create', component: RoomCreateComponent},
+  { path: 'room/details/:id', component: RoomDetailsComponent},
+  { path: 'room/update/:id', component: RoomUpdateComponent},
   { path: 'reservations', component: ReservationListComponent},
   { path: '**', redirectTo: '' }
 ];

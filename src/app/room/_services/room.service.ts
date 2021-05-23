@@ -1,3 +1,4 @@
+import { LOCATION_INITIALIZED } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -15,7 +16,19 @@ export class RoomService {
     return this._http.get<Room[]>(environment.apiUrl + 'room');
   }
 
-  addRoom(room: Room): Observable<any> {
-    return this._http.post(environment.apiUrl + 'room', room);
+  getRoomById(roomID): Observable<Room> {
+    return this._http.get<Room>(environment.apiUrl + 'room/' + roomID);
+  }
+
+  addRoom(room: Room): Observable<Room> {
+    return this._http.post<Room>(environment.apiUrl + 'room', room);
+  }
+
+  updateRoom(roomId, room: Room): Observable<Room>{
+    return this._http.put<Room>(environment.apiUrl + 'room/' + roomId, room)
+  }
+
+  deleteRoom(roomId): Observable<Room> {
+    return this._http.delete<Room>(environment.apiUrl + 'room/' + roomId)
   }
 }
