@@ -1,9 +1,38 @@
-<h2>overzicht kamers?</h2>
+<h2>Overzicht Kamers</h2>
 
-<ul>
-    <span *ngFor="let room of rooms">
-        <li >
-            {{ room.roomID + ' ' + room.description +  ', ' + room.location.name +  ', ' + room.priceHour }}
-        </li>
-    </span>
-</ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Locatie
+            </th>
+            <th>
+                Naam
+            </th>
+            <th>
+                Prijs per uur
+            </th>
+            <th>
+                Acties
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let room of rooms">
+            <td>
+                {{ room.location.name }}
+            </td>
+            <td>
+                {{ room.description }}
+            </td>
+            <td>
+                {{ room.priceHour}}
+            </td>
+            <td>
+                <a href="room/details/{{ room.roomID }}">Details</a> |
+                <a href="room/update/{{ room.roomID }}">Edit</a> |
+                <a href="room/delete/{{ room.roomID }}">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

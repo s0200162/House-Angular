@@ -14,4 +14,21 @@ export class ReservationService {
   getReservation(): Observable<Reservation[]> {
     return this._http.get<Reservation[]>(environment.apiUrl + 'reservation');
   }
+
+  getReservationById(reservationID): Observable<Reservation> {
+    return this._http.get<Reservation>(environment.apiUrl + 'reservation/' + reservationID);
+  }
+
+  addReservation(reservation: Reservation): Observable<Reservation> {
+    return this._http.post<Reservation>(environment.apiUrl + 'reservation', reservation);
+  }
+
+  updateReservation(reservationID, reservation: Reservation): Observable<Reservation>{
+    return this._http.put<Reservation>(environment.apiUrl + 'reservation/' + reservationID, reservation);
+  }
+
+  deleteReservation(reservationID): Observable<Reservation>{
+    return this._http.delete<Reservation>(environment.apiUrl + 'reservation/' + reservationID);
+  }
+
 }

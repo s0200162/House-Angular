@@ -1,0 +1,40 @@
+<h2>Nieuwe Reservatie</h2>
+<form (ngSubmit)="onSubmit()" #reservationForm="ngForm">
+    <div>
+        <label for="location">Locatie</label><br />
+        <select class="form-control" id="location" required [(ngModel)]="selectedLocation" name="location">
+            <option *ngFor="let location of locations" [ngValue]="location.locationID">
+                {{ location.name }}
+            </option>
+        </select>
+    </div>
+    <div>
+        <label for="room">Locatie</label><br />
+        <select class="form-control" id="room" required [(ngModel)]="selectedRoom" name="room">
+            <option *ngFor="let room of rooms" [ngValue]="room.roomID">
+                {{ room.description }}
+            </option>
+        </select>
+    </div>
+    <div>
+        <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd"
+                   name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+            </div>
+    </div>
+    <div>
+        <label for="period">Locatie</label><br />
+        <select class="form-control" id="period" required [(ngModel)]="selectedPeriod" name="period">
+            <option *ngFor="let period of periods" [ngValue]="period.periodID">
+                {{ period.description }}
+            </option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">
+            Submit
+          </button>
+    </div>
+</form>

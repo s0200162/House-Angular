@@ -8,6 +8,7 @@ import { RoomService } from './_services/room.service';
 import { LocationService } from '../location/_services/location.service';
 import { RoomDetailsComponent } from './room-details/room-details.component';
 import { RoomUpdateComponent } from './room-update/room-update.component';
+import { RoomDeleteComponent } from './room-delete/room-delete.component';
 
 
 
@@ -17,6 +18,7 @@ import { RoomUpdateComponent } from './room-update/room-update.component';
     RoomCreateComponent,
     RoomDetailsComponent,
     RoomUpdateComponent,
+    RoomDeleteComponent,
   ],
   imports: [
     CommonModule,

@@ -23,8 +23,7 @@ export class LocationService {
   }
 
   getLocationById(locationID): Observable<Location> {
-    return this._http.get<Location>(environment.apiUrl + 'location/' + locationID
-    );
+    return this._http.get<Location>(environment.apiUrl + 'location/' + locationID);
   }
 
   addLocation(location: Location): Observable<Location> {

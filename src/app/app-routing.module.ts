@@ -14,6 +14,11 @@ import { AuthGuard} from './_helpers/auth-guard'
 import { RoomCreateComponent } from './room/room-create/room-create.component';
 import { RoomDetailsComponent } from './room/room-details/room-details.component';
 import { RoomUpdateComponent } from './room/room-update/room-update.component';
+import { RoomDeleteComponent } from './room/room-delete/room-delete.component';
+import { ReservationDetailsComponent } from './reservation/reservation-details/reservation-details.component';
+import { ReservationUpdateComponent } from './reservation/reservation-update/reservation-update.component';
+import { ReservationDeleteComponent } from './reservation/reservation-delete/reservation-delete.component';
+import { ReservationCreateComponent } from './reservation/reservation-create/reservation-create.component';
 
 
 const routes: Routes = [
@@ -28,7 +33,12 @@ const routes: Routes = [
   { path: 'room/create', component: RoomCreateComponent},
   { path: 'room/details/:id', component: RoomDetailsComponent},
   { path: 'room/update/:id', component: RoomUpdateComponent},
+  { path: 'room/delete/:id', component: RoomDeleteComponent},
   { path: 'reservations', component: ReservationListComponent},
+  { path: 'reservation/create', component: ReservationCreateComponent},
+  { path: 'reservation/details/:id', component: ReservationDetailsComponent},
+  { path: 'reservation/update/:id', component: ReservationUpdateComponent},
+  { path: 'reservation/delete/:id', component: ReservationDeleteComponent},
   { path: '**', redirectTo: '' }
 ];
 

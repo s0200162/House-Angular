@@ -1,9 +1,52 @@
-<h2>overzicht reservaties?</h2>
+<h2>Overzicht Reservaties</h2>
 
-<ul>
-    <span *ngFor="let reservation of reservations">
-        <li >
-            {{ reservation.reservationID + ' ' + reservation.room.description +  ', ' + reservation.customer.fullname }}
-        </li>
-    </span>
-</ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Klant
+            </th>
+            <th>
+                Locatie
+            </th>
+            <th>
+                Datum
+            </th>
+
+            <th>
+                Periode
+            </th>
+
+            <th>
+                Prijs
+            </th>
+            <th>
+                Acties
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reservation of reservations">
+            <td>
+                {{ reservation.customer.fullname }}
+            </td>
+            <td>
+                {{ reservation.room.description}}
+            </td>
+            <td>
+                {{ reservation.date }}
+            </td>
+            <td>
+                {{ reservation.period.hour }}
+            </td>
+            <td>
+                {{ reservation.price }}
+            </td>
+            <td>
+                <a href="reservation/details/{{ reservation.reservationID }}">Details</a> |
+                <a href="reservation/update/{{ reservation.reservationID }}">Edit</a> |
+                <a href="reservation/delete/{{ reservation.reservationID }}">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

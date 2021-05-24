@@ -1,0 +1,42 @@
+<p>Details</p>
+
+<div>
+    <h2>Reservation</h2>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Klant
+        </dt>
+        <dd class="col-sm-10">
+            {{ reservation.customer.fullname }}
+        </dd>
+        <dt class="col-sm-2">
+            Kamer
+        </dt>
+        <dd class="col-sm-10">
+            {{ reservation.room.description }}
+        </dd>
+        <dt class="col-sm-2">
+            Datum
+        </dt>
+        <dd class="col-sm-10">
+            {{ reservation.date }}
+        </dd>
+
+        <dt class="col-sm-2">
+            Uur
+        </dt>
+        <dd class="col-sm-10">
+            {{ reservation.period.hour }}
+        </dd>
+        <dt class="col-sm-2">
+            Prijs
+        </dt>
+        <dd class="col-sm-10">
+            {{ reservation.price }}
+        </dd>
+    </dl>
+</div>
+<div>
+    <a href="reservations">Back to List</a>
+</div>
