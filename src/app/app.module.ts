@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { AuthGuard } from './_helpers/auth-guard';
 import { SiteFrameworkModule } from './site-framework/site-framework.module'
 import { JwtInterceptor } from './_helpers/jwt-interceptor';
 import { ErrorInterceptor } from './_helpers/error-interceptor';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,11 +31,12 @@ import { ErrorInterceptor } from './_helpers/error-interceptor';
     ReservationModule,
     FormsModule,
     ReactiveFormsModule,
-    SiteFrameworkModule
+    SiteFrameworkModule,
+    NgbModule
   ],
   providers: [
-    // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     AuthGuard
   ],
   bootstrap: [AppComponent]

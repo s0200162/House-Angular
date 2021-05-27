@@ -1,1 +1,38 @@
-<p>reservation-update works!</p>
+<h2>Nieuwe Reservatie</h2>
+<form (ngSubmit)="onSubmit()" #reservationForm="ngForm">
+    <div>
+        <label for="location">Locatie</label><br />
+        <select class="form-control" id="location" required [(ngModel)]="selectedLocation" (change)="FetchRooms()" name="location">
+            <option *ngFor="let location of locations" [ngValue]="location.locationID">
+                {{ location.name }}
+            </option>
+        </select>
+    </div>
+    <div>
+        <label for="room">Locatie</label><br />
+        <select class="form-control" id="room" required [(ngModel)]="selectedRoom" (change)="FetchPeriods()" name="room">
+            <option *ngFor="let room of rooms" [ngValue]="room">
+                {{ room.description }}
+            </option>
+        </select>
+    </div>
+
+    <div>
+        <label for="date">Datum:</label>
+        <input type="date" id="date" required [(ngModel)]="reservation.date" (change)="FetchPeriods()" name="date">
+    </div>
+
+    <div>
+        <label for="period">Periode</label><br />
+        <select class="form-control" id="period" required [(ngModel)]="selectedPeriod" name="period">
+            <option *ngFor="let period of periods" [ngValue]="period.periodID">
+                {{ period.hour }}
+            </option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">
+            Submit
+        </button>
+    </div>
+</form>

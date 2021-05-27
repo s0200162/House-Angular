@@ -1,5 +1,6 @@
 export class ApiUser {
     public  Username: string;
     public  Password: string;
-    public  Token?: string;
+    public  token?: string;
+    public  CustomerID?: number;
 }

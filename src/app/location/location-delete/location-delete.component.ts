@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LocationService } from '../_services/location.service';
 
 @Component({
@@ -14,7 +14,8 @@ export class LocationDeleteComponent implements OnInit {
 
   constructor(
     private _activatedRoute: ActivatedRoute,
-    private _locationService: LocationService
+    private _locationService: LocationService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +31,7 @@ export class LocationDeleteComponent implements OnInit {
   onSubmit(): void {
     this._locationService.deleteLocation(this.locationID).subscribe(result => {
       this.location = result;
+      this.router.navigate(['locations'])
     })
   }
 

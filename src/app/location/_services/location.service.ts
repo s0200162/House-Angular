@@ -1,4 +1,4 @@
-import {HttpClient} from '@angular/common/http'
+import { HttpClient} from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -10,10 +10,10 @@ import { map } from 'rxjs/operators';
 })
 export class LocationService {
 
-  constructor(private _http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getLocations(): Observable<Location[]> {
-    return this._http.get<Location[]>(environment.apiUrl + 'location')
+    return this.http.get<Location[]>(environment.apiUrl + 'location')
     .pipe(
       map((entries: any[]) =>
         entries.map((entry: any) =>
@@ -23,19 +23,19 @@ export class LocationService {
   }
 
   getLocationById(locationID): Observable<Location> {
-    return this._http.get<Location>(environment.apiUrl + 'location/' + locationID);
+    return this.http.get<Location>(environment.apiUrl + 'location/' + locationID);
   }
 
   addLocation(location: Location): Observable<Location> {
-    return this._http.post<Location>(environment.apiUrl + 'location', location);
+    return this.http.post<Location>(environment.apiUrl + 'location', location);
   }
 
   updateLocation(locationId, location: Location): Observable<Location>{
-    return this._http.put<Location>(environment.apiUrl + 'location/' + locationId, location)
+    return this.http.put<Location>(environment.apiUrl + 'location/' + locationId, location)
   }
 
   deleteLocation(locationId): Observable<Location> {
-    return this._http.delete<Location>(environment.apiUrl + 'location/' + locationId)
+    return this.http.delete<Location>(environment.apiUrl + 'location/' + locationId)
   }
 
 }

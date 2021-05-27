@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LocationService } from 'src/app/location/_services/location.service';
 import { RoomService } from '../_services/room.service';
 
@@ -18,7 +18,8 @@ export class RoomUpdateComponent implements OnInit {
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _roomService: RoomService,
-    private _locationService: LocationService
+    private _locationService: LocationService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -42,7 +43,7 @@ export class RoomUpdateComponent implements OnInit {
     this._roomService.updateRoom(this.roomID, this.room)
       .subscribe(result => {this.room = result});
       this.submitted = true;
-      console.log(this.room)
+      this.router.navigate(['rooms'])
   }
 
 }

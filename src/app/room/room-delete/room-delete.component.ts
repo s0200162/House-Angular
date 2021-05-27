@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RoomService } from '../_services/room.service';
 
 @Component({
@@ -14,7 +14,8 @@ room;
 
   constructor(
     private _activatedRoute: ActivatedRoute,
-    private _roomService: RoomService
+    private _roomService: RoomService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +31,7 @@ room;
   onSubmit(): void {
     this._roomService.deleteRoom(this.roomID).subscribe(result => {
       this.room = result;
+      this.router.navigate(['rooms'])
     })
   }
 

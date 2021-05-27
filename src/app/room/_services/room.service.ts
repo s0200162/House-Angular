@@ -16,6 +16,10 @@ export class RoomService {
     return this._http.get<Room[]>(environment.apiUrl + 'room');
   }
 
+  getRoomByLocation(locationID): Observable<Room[]> {
+    return this._http.get<Room[]>(environment.apiUrl + 'values/' + locationID);
+  }
+
   getRoomById(roomID): Observable<Room> {
     return this._http.get<Room>(environment.apiUrl + 'room/' + roomID);
   }
